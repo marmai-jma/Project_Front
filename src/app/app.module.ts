@@ -1,18 +1,20 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
+import { Routes, RouterModule } from '@angular/router';
+
 
 import { AppComponent } from './app.component';
-import { MediaComponent } from './components/media/media.component';
+import { MediaComponent } from './components/media-item/media.component';
 import { MediaFormComponent } from './components/media-form/media-form.component';
 import { ListMediasComponent } from './components/list-medias/list-medias.component';
 import { MediaNavComponent } from './components/media-nav/media-nav.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { HomeComponent } from './components/home/home.component';
-import { Routes, RouterModule } from '@angular/router';
+import { AppRoutingModule } from './app-routing.module';
 
 const routes: Routes = [
-  { path: 'home', component: HomeComponent },
-  { path: '', redirectTo: 'home', pathMatch: 'full' }
+  { path: 'liste', component: ListMediasComponent },
+  { path: '', redirectTo: 'liste', pathMatch: 'full' }
 ];
 
 
@@ -23,11 +25,12 @@ const routes: Routes = [
     MediaFormComponent,
     ListMediasComponent,
     MediaNavComponent,
-    FooterComponent,
-    HomeComponent
+    FooterComponent
   ],
   imports: [
     BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
     RouterModule.forRoot(routes)
   ],
   providers: [],

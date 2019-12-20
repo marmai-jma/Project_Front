@@ -1,26 +1,5 @@
 <div class="row" style="padding:5px;">
-    <div style="font-size:1.5em;">
-        Navigation Category
-        <!--{{ questionIndex }} / {{ quiz.questions.length }}-->
-        - current :
-        <!--{{ currentScore }}-->
-    </div>
-    <div>
-        <!-- *ngIf="!isFirstQuestion" (click)="previous.emit()" -->
-        <button class="btn btn-info">
-            Précédent
-        </button>
-    </div>
-    <div>
-        <!-- [disabled]="isNextButtonDisabled" *ngIf="!isLastQuestion" (click)="next.emit()" -->
-        <button class="btn btn-info" >
-            Suivant
-        </button>
-        <!-- *ngIf="isLastQuestion && answers[question.id]" (click)="submitQuiz()" -->
-    </div>
-    <div>
-        <button class="btn btn-warning btn-lg" >
-            Soumettre category
-        </button>
+    <div class ="alert alert-info" style="font-size:1.5em;">
+        User
     </div>
 </div>

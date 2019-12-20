@@ -1,22 +1,39 @@
-<h1>Liste des medias </h1>
 <app-media-nav></app-media-nav>
 <div>
     <p>
-        <button class="btn btn-default" >AjouterList</button>
-        <button class="btn btn-default" >Supprimerlist</button>
+        <button class="btn btn-info" >Next Category</button>
+        &nbsp;
+        <button class="btn btn-info" >Prev Category</button>
     </p>
 </div>
 
-<div class="alert alert-info">
-    <h3>Aucun media à afficher.</h3>
+<div>
+    Aucun media à afficher
 </div>
 
-
-
-<div class="row">
-
-    <div class="col-sm-6">
-        <p></p>
-    </div>
-
-</div>
+<h4>Liste des medias </h4>
+<table class="table">
+    <tbody>
+        <div class="row">
+            <div class="col-sm-6" *ngFor="let currentMedia of mediaListe">
+                <app-media [mediaItem]="currentMedia"></app-media>
+            </div>
+        </div>
+        <tr>
+            <th scope="row">1</th>
+            <td>Media #1 </td>
+            <td><i class="fas fa-search"></i>
+                <!--&nbsp;-->
+            </td>
+            <td>Like / Unlike</td>
+        </tr>
+        <tr>
+            <th scope="row">2</th>
+            <td>Media #2 </td>
+            <td><i class="fas fa-search"></i>
+                <!--&nbsp;-->
+            </td>
+            <td>Like / Unlike</td>
+        </tr>
+    </tbody>
+</table>
