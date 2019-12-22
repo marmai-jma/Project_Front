@@ -38,7 +38,7 @@ export class MediaDto {
     }
 
     /**
-    * Return a JSON representation of the quiz
+    * Return a JSON representation of the media (example quiz)
     * which is compatible with our backend.
     */
     /*toJson() {

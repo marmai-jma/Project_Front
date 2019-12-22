@@ -13,8 +13,9 @@ import { FooterComponent } from './components/footer/footer.component';
 import { AppRoutingModule } from './app-routing.module';
 
 const routes: Routes = [
-  { path: 'liste', component: ListMediasComponent },
-  { path: '', redirectTo: 'liste', pathMatch: 'full' }
+  { path: '', redirectTo: 'liste', pathMatch: 'full' },
+  { path: 'liste', component: ListMediasComponent }
+
 ];
 
 
@@ -33,7 +34,9 @@ const routes: Routes = [
     HttpClientModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [],
+  providers: [
+    { provide: 'BACKEND_URL', useValue: 'http://localhost:3004' }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
