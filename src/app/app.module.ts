@@ -10,6 +10,9 @@ import { ListMediasComponent } from './components/list-medias/list-medias.compon
 import { MediaNavComponent } from './components/media-nav/media-nav.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { AppRoutingModule } from './app-routing.module';
+import { DetailComponent } from './components/detail/detail.component';
+import { UserComponent } from './components/user/user.component';
+import { UserDetailComponent } from './components/user-detail/user-detail.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +21,10 @@ import { AppRoutingModule } from './app-routing.module';
     MediaFormComponent,
     ListMediasComponent,
     MediaNavComponent,
-    FooterComponent
+    FooterComponent,
+    DetailComponent,
+    UserComponent,
+    UserDetailComponent,
   ],
   imports: [
     BrowserModule,
