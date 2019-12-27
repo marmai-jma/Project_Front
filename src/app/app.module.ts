@@ -35,7 +35,7 @@ const routes: Routes = [
     RouterModule.forRoot(routes)
   ],
   providers: [
-    { provide: 'BACKEND_URL', useValue: 'http://localhost:3004' }
+    { provide: 'BACKEND_URL', useValue: 'http://localhost:8080' }
   ],
   bootstrap: [AppComponent]
 })
