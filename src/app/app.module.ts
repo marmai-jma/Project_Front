@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-import { Routes, RouterModule } from '@angular/router';
 
 
 import { AppComponent } from './app.component';
@@ -11,13 +10,6 @@ import { ListMediasComponent } from './components/list-medias/list-medias.compon
 import { MediaNavComponent } from './components/media-nav/media-nav.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { AppRoutingModule } from './app-routing.module';
-
-const routes: Routes = [
-  { path: '', redirectTo: 'liste', pathMatch: 'full' },
-  { path: 'liste', component: ListMediasComponent }
-
-];
-
 
 @NgModule({
   declarations: [
@@ -32,10 +24,9 @@ const routes: Routes = [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    RouterModule.forRoot(routes)
   ],
   providers: [
-    { provide: 'BACKEND_URL', useValue: 'http://localhost:3004' }
+    { provide: 'BACKEND_URL', useValue: 'http://localhost:8080' }
   ],
   bootstrap: [AppComponent]
 })
