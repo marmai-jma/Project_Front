@@ -13,6 +13,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { MediaDetailComponent } from './components/media-detail/media-detail.component';
 import { UserComponent } from './components/user/user.component';
 import { UserDetailComponent } from './components/user-detail/user-detail.component';
+import { LikeComponent } from './components/like/like.component';
+import { PersonalReviewComponent } from './components/personal-review/personal-review.component';
+import { ReviewListComponent } from './components/review-list/review-list.component';
+import { ReviewComponent } from './components/review/review.component';
+import { UsefulComponent } from './components/useful/useful.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -25,11 +31,17 @@ import { UserDetailComponent } from './components/user-detail/user-detail.compon
     MediaDetailComponent,
     UserComponent,
     UserDetailComponent,
+    LikeComponent,
+    PersonalReviewComponent,
+    ReviewListComponent,
+    ReviewComponent,
+    UsefulComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [
     { provide: 'BACKEND_URL', useValue: 'http://localhost:8080' }
