@@ -1,0 +1,28 @@
+<p>media-detail works!</p>
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb" style="background-color: #e3f2fd;">
+      <li class="breadcrumb-item"><a routerLink="/liste">Retour à la liste</a></li>
+    </ol>
+  </nav>
+
+  <ng-container *ngIf="mediaDetail">
+
+    <div class="row">
+      <div class="col-md-6">
+        <img [src]="mediaDetail.mediaImageURL" class="rounded img-fluid">
+      </div>
+      <div class="col-md-6">
+        <h1>{{ mediaDetail.label }}</h1>
+        <!-- <p style="font-size: 2em; color: silver;">{{ product.price|currency:'€' }}</p> -->
+        <!-- <div class="tags my-3">
+          <span class="badge badge-pill badge-info ml-2" *ngFor="let tag of product.tags">{{ tag.name }}</span>
+        </div> -->
+        <p>{{ mediaDetail.description }}</p>
+        <p>{{ mediaDetail.category }} {{ mediaDetail.type }}</p>
+        <p>Auteur: {{ mediaDetail.authorSurname }} {{ mediaDetail.authorName }}</p>
+        <p>Date de sortie: {{ mediaDetail.publicationDate }}</p>
+        <p>Likes:  {{ mediaDetail.likesNumber }} Dislikes: {{ mediaDetail.dislikesNumber }} </p>
+      </div>
+    </div>
+
+  </ng-container>

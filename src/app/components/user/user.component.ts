@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UserDto } from 'src/app/shared-data/user-dto';
+import { UserLightDto } from 'src/app/shared-data/user-light-dto';
 
 @Component({
   selector: 'app-user',
@@ -7,7 +7,7 @@ import { UserDto } from 'src/app/shared-data/user-dto';
   styleUrls: ['./user.component.scss']
 })
 export class UserComponent implements OnInit {
-  user: UserDto = {id : 1, login : 'toto'};
+  user: UserLightDto = {id : 9993, login : 'moi', active : true};
 
   constructor() { }
 
