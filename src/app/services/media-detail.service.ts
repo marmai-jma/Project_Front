@@ -26,7 +26,7 @@ export class MediaDetailService {
     );
   }
 
-  deleteReviewById(reviewId: long): Observable<any> {
+  deleteReviewById(reviewId: number): Observable<any> {
     return this.http.delete(`${this.baseUrl}/reviews/${reviewId}`);
   }
 }

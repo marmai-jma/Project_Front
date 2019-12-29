@@ -1,2 +1,19 @@
-<p [routerLink]="['/user', user.login]">user works!</p>
+<p>user works!</p>
 <div class="user" ></div>
+<form [formGroup]="userForm" (ngSubmit)="logUser()">
+    <!-- validation -->
+    <div *ngIf="userForm.get('login').dirty
+                && userForm.get('login').touched
+                && userForm.get('login').invalid"
+        class="alert">
+        <div *ngIf ="userForm.get('login').hasError('required')">
+            Le login est obligatoire.
+    </div>
+        <div *ngIf ="userForm.get('login').hasError('maxlength')">
+            Le login doit au maximum faire 25 caractères.
+        </div>
+    </div>
+    Login: <input formControlName="login">
+    <button type="submit">Enregistrer</button>
+</form>
+<a type="submit" [routerLink]="['/user', user.login]">Informations utilisateur</a>
