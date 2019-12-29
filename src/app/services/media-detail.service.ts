@@ -20,7 +20,13 @@ export class MediaDetailService {
               }
 
   postReviewBymediaIdUserLogin(mediaId: string, userLogin: string, comment: string ): Observable<any> {
-    console.log(`${this.baseUrl}/medias/${mediaId}/review/${userLogin}`);
-    return this.http.post(`${this.baseUrl}/medias/${mediaId}/review/${userLogin}`, {'comment': comment} );
+    return this.http.post(`${this.baseUrl}/medias/${mediaId}/review/${userLogin}`, {'comment': comment} )
+    .pipe(
+      map((result: any) => new MediaDetailDto(result)),
+    );
+  }
+
+  deleteReviewById(reviewId: long): Observable<any> {
+    return this.http.delete(`${this.baseUrl}/reviews/${reviewId}`);
   }
 }
