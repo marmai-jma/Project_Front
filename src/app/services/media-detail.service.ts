@@ -18,4 +18,9 @@ export class MediaDetailService {
                   map((result: any) => new MediaDetailDto(result)),
                 );
               }
+
+  postReviewBymediaIdUserLogin(mediaId: string, userLogin: string, comment: string ): Observable<any> {
+    console.log(`${this.baseUrl}/medias/${mediaId}/review/${userLogin}`);
+    return this.http.post(`${this.baseUrl}/medias/${mediaId}/review/${userLogin}`, {'comment': comment} );
+  }
 }
