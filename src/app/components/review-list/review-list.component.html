@@ -1,19 +1,14 @@
 <p>review-list works!</p>
 <table class="tableReview">
     <tbody>
-        <div class="row">
-            <div class="col-sm-4">
-                <app-review></app-review>
+        <div class="row" *ngIf="reviewListe.length > 0">
+            <div class="col-sm-4" *ngFor="let currentReview of reviewListe">
+                <app-review [reviewItem]="currentReview"></app-review>
             </div>
-            <div class="col-sm-4">
-                <app-review></app-review>
-            </div>
-            <div class="col-sm-4">
-                <app-review></app-review>
-            </div>
-            <!-- <div class="col-sm-4" *ngFor="let currentMedia of mediaListe">
-                <app-media [mediaItem]="currentMedia"></app-media>
-            </div> -->
         </div>
+
     </tbody>
 </table>
+<div class="alert alert-info" *ngIf="reviewListe.length === 0">
+    <h4>aucune revue à afficher</h4>
+</div>

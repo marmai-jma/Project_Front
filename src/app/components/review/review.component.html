@@ -1,5 +1,6 @@
 <p>review works!</p>
-<ng-container>
-    <p>Commentaire à afficher ici</p>
+<ng-container *ngIf="reviewItem">
+
+    <p>{{reviewItem.comment}} Commentaire à afficher ici</p>
     <app-useful></app-useful>
 </ng-container>

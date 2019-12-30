@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { ReviewDto } from 'src/app/shared-data/review-dto';
 
 @Component({
   selector: 'app-review',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./review.component.scss']
 })
 export class ReviewComponent implements OnInit {
+  @Input() reviewItem: ReviewDto;
 
   constructor() { }
 

@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ReviewDto } from 'src/app/shared-data/review-dto';
+import { MediaDetailService } from 'src/app/services/media-detail.service';
 
 @Component({
   selector: 'app-review-list',
@@ -8,11 +9,17 @@ import { ReviewDto } from 'src/app/shared-data/review-dto';
 })
 export class ReviewListComponent implements OnInit {
   @Input() mediaId: string;
-  @Input() reviews: ReviewDto[];
-  constructor() { }
+  reviewListe: ReviewDto[] =[];
+
+  constructor(private mediaDetailService: MediaDetailService) { }
 
   ngOnInit() {
-    console.log(this.reviews[0].comment)
+    this.mediaDetailService.getReviewsByMedia(this.mediaId)
+    .subscribe(data => {
+      this.reviewListe = data;
+    });
+    console.log(this.mediaId);
+
   }
 
 }
