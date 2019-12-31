@@ -19,6 +19,7 @@ import { ReviewListComponent } from './components/review-list/review-list.compon
 import { ReviewComponent } from './components/review/review.component';
 import { UsefulComponent } from './components/useful/useful.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { Globals } from './globals';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     ReactiveFormsModule
   ],
   providers: [
-    { provide: 'BACKEND_URL', useValue: 'http://localhost:8080' }
+    { provide: 'BACKEND_URL', useValue: 'http://localhost:8080' },
+    Globals
   ],
   bootstrap: [AppComponent]
 })
