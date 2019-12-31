@@ -39,9 +39,10 @@ export class PersonalReviewComponent implements OnInit {
 
   deleteReview() {
     this.userLogin = this.globals.userLogin;
-    // ajouter ici une vérification par user et login pour recup numéro de revue avant delete par review
     console.log(this.userLogin);
     console.log(this.review.id);
-    this.mediaDetailService.deleteReviewById(this.review.id).subscribe(() => this.personalReviewForm.get('comment').reset(''));
+    // this.mediaDetailService.deleteReviewById(this.review.id).subscribe(() => this.personalReviewForm.get('comment').reset(''));
+    this.mediaDetailService.deleteReviewBymediaIdUserLogin(this.mediaId,this.userLogin)
+    .subscribe(() => this.personalReviewForm.get('comment').reset(''));
   }
 }

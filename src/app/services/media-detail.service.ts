@@ -31,6 +31,10 @@ export class MediaDetailService {
     return this.http.delete(`${this.url}/reviews/${reviewId}`);
   }
 
+  deleteReviewBymediaIdUserLogin(mediaId: string, userLogin: string): Observable<any> {
+    return this.http.delete(`${this.url}/medias/${mediaId}/review/${userLogin}`);
+  }
+
   getReviewsByMedia(mediaId: string): Observable<ReviewDto[]> {
     return this.http.get(`${this.url}/medias/${mediaId}/reviews`)
     .pipe(
