@@ -24,22 +24,19 @@ export class LikeComponent implements OnInit {
     this.userLogin = this.globals.userLogin;
     this.liked = false;
     this.disLiked = false;
+
+
     console.log(this.mediaId);
     this.mediaDetailService.  getMediaNotationBymediaIdUserLogin(this.mediaId, this.userLogin)
        .subscribe(data => {
          this.mediaNotationLightDto = data;
-         console.log(this.mediaNotationLightDto.liked);
-         if (this.mediaNotationLightDto.liked === null){
-           console.log('null');
-           this.liked = false;
-           this.disLiked = false;
-         } else {
+         if (this.mediaNotationLightDto.liked !== null){
            console.log('not null');
            this.liked = this.mediaNotationLightDto.liked;
-           this.disLiked = !(this.liked);
+           this.disLiked = ! this.liked;
          }
          console.log(this.liked);
-         console.log(this.disLiked);
+
         } );
   }
 
