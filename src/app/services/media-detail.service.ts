@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { MediaDetailDto } from '../shared-data/media-detail-dto';
 import { map } from 'rxjs/operators';
 import { ReviewDto } from '../shared-data/review-dto';
+import { MediaNotationLightDto } from '../shared-data/media-notation-light-dto';
 
 @Injectable({
   providedIn: 'root'
@@ -40,6 +41,13 @@ export class MediaDetailService {
     .pipe(
       map((jsonMedias: any[]) => jsonMedias.map(jsonMedia => new ReviewDto(jsonMedia)))
       );
+  }
+
+  getMediaNotationBymediaIdUserLogin(mediaId: string, userLogin: string ): Observable<MediaNotationLightDto> {
+    return this.http.get(`${this.url}/medias/${mediaId}/notation/${userLogin}`)
+    .pipe(
+      map((result: any) => new MediaNotationLightDto(result)),
+    );
   }
 
 }

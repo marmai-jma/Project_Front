@@ -1,1 +1,9 @@
 <p>like works!</p>
+<div class="likeComponent">
+    <p *ngIf = [liked]>Liked by user</p>
+    <p *ngIf = [disLiked]>DisLiked by user</p>
+    <div>
+        <button type="submit">Like</button>
+        <button type="submit">Unlike</button>
+    </div>
+</div>

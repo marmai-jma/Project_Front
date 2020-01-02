@@ -14,7 +14,7 @@
         <p>Auteur: {{ mediaDetail.authorSurname }} {{ mediaDetail.authorName }}</p>
         <p>Date de sortie: {{ mediaDetail.publicationDate }}</p>
         <p>Likes:  {{ mediaDetail.likesNumber }} Dislikes: {{ mediaDetail.dislikesNumber }} </p>
-        <app-like></app-like>
+        <app-like [mediaId]="mediaDetail.id"></app-like>
         </div>
     </div>
     <app-personal-review [mediaId]="mediaDetail.id"></app-personal-review>
