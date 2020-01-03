@@ -50,4 +50,9 @@ export class MediaDetailService {
     );
   }
 
+  postNotationBymediaIdUserLogin(mediaId: string, userLogin: string, like: boolean ) : Observable<any> {
+    console.log("url : " + this.url + ", media id :" + mediaId + ", userLogin: " + userLogin + ", like : " + like)
+    return this.http.post<any>(`${this.url}/medias/${mediaId}/notation/${userLogin}`, {'liked': like});
+  }
+
 }

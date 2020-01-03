@@ -3,7 +3,7 @@
     <p *ngIf = "liked">Liked by user</p>
     <p *ngIf = "disLiked">DisLiked by user</p>
     <div>
-        <button><i class="fas fa-thumbs-up"></i></button>
-        <button><i class="fas fa-thumbs-down"></i></button>
+        <button><i class="fas fa-thumbs-up" (click)="likeMedia()"></i></button>
+        <button><i class="fas fa-thumbs-down" (click)="dislikeMedia()"></i></button>
     </div>
 </div>
