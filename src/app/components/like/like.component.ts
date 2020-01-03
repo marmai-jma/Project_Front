@@ -27,17 +27,17 @@ export class LikeComponent implements OnInit {
 
 
     console.log(this.mediaId);
-    this.mediaDetailService.  getMediaNotationBymediaIdUserLogin(this.mediaId, this.userLogin)
-       .subscribe(data => {
-         this.mediaNotationLightDto = data;
-         if (this.mediaNotationLightDto.liked !== null){
-           console.log('not null');
-           this.liked = this.mediaNotationLightDto.liked;
-           this.disLiked = ! this.liked;
-         }
-         console.log(this.liked);
+    // this.mediaDetailService.  getMediaNotationBymediaIdUserLogin(this.mediaId, this.userLogin)
+    //    .subscribe(data => {
+    //      this.mediaNotationLightDto = data;
+    //      if (this.mediaNotationLightDto.liked !== null){
+    //        console.log('not null');
+    //        this.liked = this.mediaNotationLightDto.liked;
+    //        this.disLiked = ! this.liked;
+    //      }
+    //      console.log(this.liked);
 
-        } );
+    //     } );
   }
 
 }

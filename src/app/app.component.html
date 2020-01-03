@@ -1,4 +1,4 @@
-<nav class="navbar fixed-top navbar-light bg-light">
+<nav class="navbar fixed-top navbar-light bg-warning">
   <a class="navbar-brand" href="#">
     <!-- Fixed top de Bootstrap -->
     <img src="/assets/logo.png">
@@ -7,8 +7,14 @@
   <app-user></app-user>
 </nav>
 <div class="container">
-  <i class="fas fa-user"></i>
-  ROUTER OUTLET
-  <router-outlet></router-outlet>
+  <div class="row align-items-start">
+    <div class="col-lg bg-info">
+      <i class="fas fa-user"></i>
+      <router-outlet></router-outlet>
+    </div>
+    <div class="col-3 p-4 mb-2 bg-primary text-white">
+      <h5>Liste Recos</h5>
+    </div>
+  </div>
 </div>
 <app-footer></app-footer>

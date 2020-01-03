@@ -1,27 +1,25 @@
 <p>media-detail works!</p>
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb" style="background-color: #e3f2fd;">
+    <li class="breadcrumb-item"><a routerLink="/liste">Retour à la liste</a></li>
+  </ol>
+</nav>
+<ng-container *ngIf="mediaDetail">
 
-
-  <ng-container *ngIf="mediaDetail">
-
-    <div class="row">
-      <div class="col-md-6">
-        <img [src]="mediaDetail.mediaImageURL" class="rounded img-fluid">
-      </div>
-      <div class="col-md-6">
-        <h1>{{ mediaDetail.label }}</h1>
-        <p>{{ mediaDetail.description }}</p>
-        <p>{{ mediaDetail.category }} {{ mediaDetail.type }}</p>
-        <p>Auteur: {{ mediaDetail.authorSurname }} {{ mediaDetail.authorName }}</p>
-        <p>Date de sortie: {{ mediaDetail.publicationDate }}</p>
-        <p>Likes:  {{ mediaDetail.likesNumber }} Dislikes: {{ mediaDetail.dislikesNumber }} </p>
-        <app-like [mediaId]="mediaDetail.id"></app-like>
-        </div>
+  <div class="row">
+    <div class="col-md-6 bg-light">
+      <img [src]="mediaDetail.mediaImageURL" class="rounded img-fluid">
     </div>
-    <app-personal-review [mediaId]="mediaDetail.id"></app-personal-review>
-    <app-review-list [mediaId]="mediaDetail.id"></app-review-list>
-  </ng-container>
-  <nav aria-label="breadcrumb">
-    <ol class="breadcrumb" style="background-color: #e3f2fd;">
-      <li class="breadcrumb-item"><a routerLink="/liste">Retour à la liste</a></li>
-    </ol>
-  </nav>
+    <div class="col-md-6 bg-success">
+      <h1>{{ mediaDetail.label }}</h1>
+      <p>{{ mediaDetail.description }}</p>
+      <p>{{ mediaDetail.category }} {{ mediaDetail.type }}</p>
+      <p>Auteur: {{ mediaDetail.authorSurname }} {{ mediaDetail.authorName }}</p>
+      <p>Date de sortie: {{ mediaDetail.publicationDate }}</p>
+      <p>Likes:  {{ mediaDetail.likesNumber }} Dislikes: {{ mediaDetail.dislikesNumber }} </p>
+      <app-like [mediaId]="mediaDetail.id"></app-like>
+    </div>
+  </div>
+  <app-personal-review [mediaId]="mediaDetail.id"></app-personal-review>
+  <app-review-list [mediaId]="mediaDetail.id"></app-review-list>
+</ng-container>
