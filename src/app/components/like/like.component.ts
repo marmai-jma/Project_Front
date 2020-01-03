@@ -26,7 +26,7 @@ export class LikeComponent implements OnInit {
     this.disLiked = false;
 
 
-    console.log(this.mediaId);
+    // console.log(this.mediaId);
     // this.mediaDetailService.  getMediaNotationBymediaIdUserLogin(this.mediaId, this.userLogin)
     //    .subscribe(data => {
     //      this.mediaNotationLightDto = data;
