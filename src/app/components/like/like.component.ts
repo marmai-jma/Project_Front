@@ -26,18 +26,18 @@ export class LikeComponent implements OnInit {
     this.disLiked = false;
 
 
-    console.log(this.mediaId);
-    this.mediaDetailService.  getMediaNotationBymediaIdUserLogin(this.mediaId, this.userLogin)
-       .subscribe(data => {
-         this.mediaNotationLightDto = data;
-         if (this.mediaNotationLightDto.liked !== null){
-           console.log('not null');
-           this.liked = this.mediaNotationLightDto.liked;
-           this.disLiked = ! this.liked;
-         }
-         console.log(this.liked);
+    // console.log(this.mediaId);
+    // this.mediaDetailService.  getMediaNotationBymediaIdUserLogin(this.mediaId, this.userLogin)
+    //    .subscribe(data => {
+    //      this.mediaNotationLightDto = data;
+    //      if (this.mediaNotationLightDto.liked !== null){
+    //        console.log('not null');
+    //        this.liked = this.mediaNotationLightDto.liked;
+    //        this.disLiked = ! this.liked;
+    //      }
+    //      console.log(this.liked);
 
-        } );
+    //     } );
   }
 
 }
