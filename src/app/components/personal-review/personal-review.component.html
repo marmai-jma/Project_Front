@@ -13,8 +13,10 @@
             Le commentaire doit au maximum faire 255 caractères.
         </div>
     </div>
-    avis: <textarea formControlName="comment"></textarea>
-    <button type="submit">Enregistrer</button>
+    <div>
+        Avis:<br>
+        <textarea formControlName="comment"></textarea><br>
+        <button type="submit">Enregistrer</button>
+    </div>
 </form>
 <button (click)="deleteReview()">Supprimer</button>
-
