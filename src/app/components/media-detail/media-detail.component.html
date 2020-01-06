@@ -10,13 +10,18 @@
     <div class="col-md-6 bg-light">
       <img [src]="mediaDetail.mediaImageURL" class="rounded img-fluid">
     </div>
-    <div class="col-md-6 bg-success">
+    <div class="col-md-6 bg-success" >
       <h1>{{ mediaDetail.label }}</h1>
       <p>{{ mediaDetail.description }}</p>
       <p>{{ mediaDetail.category }} {{ mediaDetail.type }}</p>
       <p>Auteur: {{ mediaDetail.authorSurname }} {{ mediaDetail.authorName }}</p>
       <p>Date de sortie: {{ mediaDetail.publicationDate }}</p>
-      <p><i class="fas fa-thumbs-up"></i>  {{ mediaDetail.likesNumber }} <i class="fas fa-thumbs-down"></i> {{ mediaDetail.dislikesNumber }} </p>
+
+      <!-- <p 
+        <i class="fas fa-thumbs-up"></i>  {{ mediaDetail.likesNumber }}
+        <i class="fas fa-thumbs-down"></i> {{ mediaDetail.dislikesNumber }}
+      </p> -->
+
       <app-like [mediaId]="mediaDetail.id"></app-like>
     </div>
   </div>

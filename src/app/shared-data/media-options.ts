@@ -12,6 +12,6 @@ export interface MediaOptions {
     mediaImageURL?: string;
     publicationDate?: string;
 
-    likesTotalNumber?: number;
-    dislikesTotalNumber?: number;
+    likesNumber?: number;
+    dislikesNumber?: number;
 }

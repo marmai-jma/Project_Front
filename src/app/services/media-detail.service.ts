@@ -11,8 +11,13 @@ import { MediaNotationLightDto } from '../shared-data/media-notation-light-dto';
 })
 export class MediaDetailService {
 
+
+
   constructor(private http: HttpClient,
               @Inject('BACKEND_URL') private url: string) {}
+
+
+
 
   getMediaDetailById(mediaId: string): Observable<MediaDetailDto> {
                 return this.http.get(`${this.url}/medias/${mediaId}`)
@@ -54,5 +59,8 @@ export class MediaDetailService {
     console.log("url : " + this.url + ", media id :" + mediaId + ", userLogin: " + userLogin + ", like : " + like)
     return this.http.post<any>(`${this.url}/medias/${mediaId}/notation/${userLogin}`, {'liked': like});
   }
+
+  
+
 
 }

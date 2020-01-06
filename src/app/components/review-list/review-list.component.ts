@@ -18,7 +18,7 @@ export class ReviewListComponent implements OnInit {
     .subscribe(data => {
       this.reviewListe = data;
     });
-    console.log(this.mediaId);
+    // console.log(this.mediaId);
 
   }
 

@@ -7,10 +7,11 @@
                 && userForm.get('login').invalid"
         class="alert">
         <div *ngIf ="userForm.get('login').hasError('required')">
-            Le login est obligatoire.
+            <h6>Le login est obligatoire.</h6>
     </div>
         <div *ngIf ="userForm.get('login').hasError('maxlength')">
-            Le login doit au maximum faire 25 caractères.
+
+            <h6 >Le login doit au maximum faire 25 caractères.</h6>
         </div>
     </div>
     Login: <input formControlName="login">

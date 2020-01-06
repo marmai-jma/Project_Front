@@ -1,17 +1,17 @@
 import { UserLightDto } from './user-light-dto';
 
 export class MediaNotationDto {
-    id: number;
+    id: string;
     liked: boolean;
     userLightDto: UserLightDto;
 
     constructor(options: {
-        id: number;
+        id: string;
         liked: boolean;
         userLightDto: UserLightDto;
         }) {
-            this.id = options.id;
-            this.liked = options.liked;
-            this.userLightDto = options.userLightDto;
+        this.id = options.id || null;
+        this.liked = options.liked;
+        this.userLightDto = options.userLightDto;
         }
 }
