@@ -21,27 +21,37 @@ export class PersonalReviewComponent implements OnInit {
               globals: Globals) { this.globals = globals; }
 
   ngOnInit() {
-    this.userLogin = this.globals.userLogin;
+    // this.userLogin = this.globals.userLogin;
+    this.globals.getCurrentUser().subscribe(
+      data => {
+        this.userLogin = data;
     this.personalReviewForm = this.fb.group({
       comment: ['', [Validators.required, Validators.maxLength(2550)]]
     });
-    console.log(this.userLogin);
-  }
+    console.log(data);
+  });}
 
   saveReview() {
-    this.userLogin = this.globals.userLogin;
+    // this.userLogin = this.globals.userLogin;
+    // this.globals.getCurrentUser().subscribe(
+    //   data => {
     console.log(this.userLogin);
     this.mediaDetailService.postReviewBymediaIdUserLogin(this.mediaId,
       this.userLogin,
       this.personalReviewForm.get('comment').value).subscribe(data => this.review = data);
+    // });
   }
 
   deleteReview() {
-    this.userLogin = this.globals.userLogin;
+    // this.userLogin = this.globals.userLogin;
+    // this.globals.getCurrentUser().subscribe(
+    //   data => {
     console.log(this.userLogin);
     console.log(this.review.id);
     // this.mediaDetailService.deleteReviewById(this.review.id).subscribe(() => this.personalReviewForm.get('comment').reset(''));
     this.mediaDetailService.deleteReviewBymediaIdUserLogin(this.mediaId,this.userLogin)
     .subscribe(() => this.personalReviewForm.get('comment').reset(''));
+  // }
+  //   )
   }
 }

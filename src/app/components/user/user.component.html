@@ -12,12 +12,10 @@
         <div *ngIf ="userForm.get('login').hasError('maxlength')">
             <h6 >Le login doit au maximum faire 25 caractères.</h6>
         </div>
-        <div *ngIf="verifyUser()">
-            <h6>Le login n'existe pas en base.</h6>
-        </div>
 </div>
 Login: <input formControlName="login" [(ngModel)]="user.login">
 <!-- <button type="submit">Enregistrer</button> -->
 <br />
+
 </form>
 <a type="submit" [routerLink]="['/user', user.login]">Informations utilisateur</a>

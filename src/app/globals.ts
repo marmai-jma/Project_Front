@@ -3,7 +3,7 @@ import { BehaviorSubject } from 'rxjs';
 
 @Injectable()
 export class Globals {
-    userLogin: string = 'moi';
+    userLogin: string;
     currrentUserSubj = new BehaviorSubject<string>(null);
 
     setCurrentUser(user : string){

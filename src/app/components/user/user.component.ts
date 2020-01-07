@@ -27,25 +27,35 @@ export class UserComponent implements OnInit {
    }
 
   ngOnInit() {
+    this.globals.getCurrentUser().subscribe(
+      data => {
     this.userForm = this.fb.group({
-      login: [this.globals.userLogin, [Validators.required, Validators.maxLength(25)]]
+      login: [data, [Validators.required, Validators.maxLength(25)]]
     });
-    console.log(this.user.login);
+    console.log(this.userForm.value)
+      }
+    )
+    // (this.userForm.get('login').value);
+    // this.userForm = this.fb.group({
+    //   login: [this.globals.userLogin, [Validators.required, Validators.maxLength(25)]]
+    // });
+    // console.log(this.user.login);
 
   }
 
   logUser() {
     this.globals.setCurrentUser(this.userForm.get('login').value);
-    this.globals.userLogin = this.userForm.get('login').value;
+    // this.globals.userLogin = this.userForm.get('login').value;
     this.router.navigate(["/"]);
-    console.log('logUser : ' + this.globals.userLogin);
+    // console.log('logUser : ' + this.globals.userLogin);
+    console.log(this.userForm.value)
   }
 
   verifyUser() {
-    const userId = this.globals.userLogin;
-    this.userService.getOneUser(userId)
-      .subscribe(data => this.userVerif = data);
-    console.log('verifyUser :' + this.userVerif);
+    // const userId = this.globals.userLogin;
+    // this.userService.getOneUser(userId)
+    //   .subscribe(data => this.userVerif = data);
+    // console.log('verifyUser :' + this.userVerif);
   }
 
 
