@@ -23,7 +23,7 @@ export class PersonalReviewComponent implements OnInit {
   ngOnInit() {
     this.userLogin = this.globals.userLogin;
     this.personalReviewForm = this.fb.group({
-      comment: ['', [Validators.required, Validators.maxLength(255)]]
+      comment: ['', [Validators.required, Validators.maxLength(2550)]]
     });
     console.log(this.userLogin);
   }

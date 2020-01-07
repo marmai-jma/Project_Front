@@ -91,11 +91,4 @@ export class LikeComponent implements OnInit {
     .subscribe(() => console.log('disliked'));
 
   }
-
-
-
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 53f1906f7a7a3c8818f4bf58c81002130c282eb1
