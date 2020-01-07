@@ -5,12 +5,20 @@ import { MediaOptions } from './media-options';
  * A media and its metadata.
  */
 
+export enum MediaCategory {
+    FILM,
+    MUSIQUE,
+    JEU,
+    LIVRE
+  }
+
 export class MediaDto {
 
     id: string;
     label: string;
 
-    category: string;
+    category: MediaCategory;
+    // category: string;
     type: string;
 
     authorName: string;
@@ -26,7 +34,20 @@ export class MediaDto {
     constructor(options: MediaOptions = {}) {
         this.id = options.id || null;
         this.label = options.label || '';
-        this.category = options.category || '';
+        // this.category = options.category || '';
+        switch (options.category) {
+            case 'MUSIQUE':
+              this.category = MediaCategory.MUSIQUE;
+              break;
+            case 'JEU':
+              this.category = MediaCategory.JEU;
+              break;
+            case 'LIVRE':
+              this.category = MediaCategory.LIVRE;
+              break;
+            case 'FILM':
+                this.category = MediaCategory.FILM;
+          } options.category || '';
         this.type = options.type || '';
         this.authorName = options.authorName || '';
         this.authorSurname = options.authorSurname || '';

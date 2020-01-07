@@ -3,8 +3,7 @@ import { MediaDto } from 'src/app/shared-data/media-dto';
 
 @Component({
   selector: 'app-media',
-  templateUrl: './media.component.html',
-  styleUrls: ['./media.component.scss']
+  templateUrl: './media.component.html'
 })
 export class MediaComponent implements OnInit {
 

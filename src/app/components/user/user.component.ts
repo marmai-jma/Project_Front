@@ -8,8 +8,7 @@ import { UserDto } from 'src/app/shared-data/user-dto';
 
 @Component({
   selector: 'app-user',
-  templateUrl: './user.component.html',
-  styleUrls: ['./user.component.scss']
+  templateUrl: './user.component.html'
 })
 export class UserComponent implements OnInit {
   user: UserLightDto = { id: '', login: '', active: false };

@@ -5,8 +5,7 @@ import { MediaDetailService } from 'src/app/services/media-detail.service';
 
 @Component({
   selector: 'app-detail',
-  templateUrl: './media-detail.component.html',
-  styleUrls: ['./media-detail.component.scss']
+  templateUrl: './media-detail.component.html'
 })
 export class MediaDetailComponent implements OnInit {
   @Input() mediaDetail: MediaDetailDto;

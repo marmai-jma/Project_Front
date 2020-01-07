@@ -4,8 +4,7 @@ import { RecosService } from 'src/app/services/recos.service';
 
 @Component({
   selector: 'app-list-recos',
-  templateUrl: './list-recos.component.html',
-  styleUrls: ['./list-recos.component.scss']
+  templateUrl: './list-recos.component.html'
 })
 export class ListRecosComponent implements OnInit {
   recoListe: RecoDto[];

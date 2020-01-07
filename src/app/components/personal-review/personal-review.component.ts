@@ -6,8 +6,7 @@ import { Globals } from 'src/app/globals';
 
 @Component({
   selector: 'app-personal-review',
-  templateUrl: './personal-review.component.html',
-  styleUrls: ['./personal-review.component.scss']
+  templateUrl: './personal-review.component.html'
 })
 export class PersonalReviewComponent implements OnInit {
   @Input() mediaId: string;
@@ -24,7 +23,7 @@ export class PersonalReviewComponent implements OnInit {
   ngOnInit() {
     this.userLogin = this.globals.userLogin;
     this.personalReviewForm = this.fb.group({
-      comment: ['', [Validators.required, Validators.maxLength(255)]]
+      comment: ['', [Validators.required, Validators.maxLength(2550)]]
     });
     console.log(this.userLogin);
   }

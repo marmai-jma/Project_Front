@@ -2,8 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-media-form',
-  templateUrl: './media-form.component.html',
-  styleUrls: ['./media-form.component.scss']
+  templateUrl: './media-form.component.html'
 })
 export class MediaFormComponent implements OnInit {
 

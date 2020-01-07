@@ -5,8 +5,7 @@ import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-user-detail',
-  templateUrl: './user-detail.component.html',
-  styleUrls: ['./user-detail.component.scss']
+  templateUrl: './user-detail.component.html'
 })
 export class UserDetailComponent implements OnInit {
   @Input() userDetail: UserDto;
