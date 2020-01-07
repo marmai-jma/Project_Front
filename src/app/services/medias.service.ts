@@ -29,6 +29,13 @@ export class MediasService {
         map(jsonMedia => new MediaDto(jsonMedia)));
     }
 
+    // Ne sert finalement pas car le classement par catégorie se fait via la classe ListMediasComponent
+    getMediaByCategory(category: any): Observable<MediaDto[]> {
+      return this.http.get(`${this.url}/medias/category/${category}`)
+      .pipe(
+        map((jsonMedias: any[]) => jsonMedias.map(jsonMedia => new MediaDto(jsonMedia)))
+        );
+    }
 
       // delete a faire uniquement pour l'admin USER
 

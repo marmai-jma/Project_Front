@@ -5,8 +5,7 @@ import { Globals } from 'src/app/globals';
 
 @Component({
   selector: 'app-user',
-  templateUrl: './user.component.html',
-  styleUrls: ['./user.component.scss']
+  templateUrl: './user.component.html'
 })
 export class UserComponent implements OnInit {
   user: UserLightDto = {id : 9993, login : 'moi', active : true};

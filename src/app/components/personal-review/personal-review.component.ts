@@ -6,8 +6,7 @@ import { Globals } from 'src/app/globals';
 
 @Component({
   selector: 'app-personal-review',
-  templateUrl: './personal-review.component.html',
-  styleUrls: ['./personal-review.component.scss']
+  templateUrl: './personal-review.component.html'
 })
 export class PersonalReviewComponent implements OnInit {
   @Input() mediaId: string;

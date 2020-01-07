@@ -20,6 +20,8 @@ import { ReviewComponent } from './components/review/review.component';
 import { UsefulComponent } from './components/useful/useful.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { Globals } from './globals';
+import { RecoItemComponent } from './components/reco-item/reco-item.component';
+import { ListRecosComponent } from './components/list-recos/list-recos.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +39,8 @@ import { Globals } from './globals';
     ReviewListComponent,
     ReviewComponent,
     UsefulComponent,
+    RecoItemComponent,
+    ListRecosComponent,
   ],
   imports: [
     BrowserModule,

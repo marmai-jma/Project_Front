@@ -6,8 +6,7 @@ import { ReviewDto } from 'src/app/shared-data/review-dto';
 
 @Component({
   selector: 'app-detail',
-  templateUrl: './media-detail.component.html',
-  styleUrls: ['./media-detail.component.scss']
+  templateUrl: './media-detail.component.html'
 })
 export class MediaDetailComponent implements OnInit {
   mediaDetail: MediaDetailDto;

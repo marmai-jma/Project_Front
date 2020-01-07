@@ -4,8 +4,7 @@ import { MediaDetailService } from 'src/app/services/media-detail.service';
 
 @Component({
   selector: 'app-review-list',
-  templateUrl: './review-list.component.html',
-  styleUrls: ['./review-list.component.scss']
+  templateUrl: './review-list.component.html'
 })
 export class ReviewListComponent implements OnInit {
   @Input() mediaId: string;

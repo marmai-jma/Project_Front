@@ -1,21 +1,41 @@
-<!-- <app-media-nav></app-media-nav>
-<div>
-    <p>
-        <button class="btn btn-info" >Next Type-Categ</button>
-        &nbsp;
-        <button class="btn btn-info" >Prev Type-Categ</button>
-    </p>
-</div> -->
-<!-- <div>
-    Aucun media à afficher
-</div> -->
-<h5>Liste des medias </h5>
-<table class="table">
-    <tbody>
-        <div class="row">
-            <div class="col-sm-4" *ngFor="let currentMedia of mediaListe">
+<!-- <h2>Liste des medias </h2>
+
+    <div class="row">
+            <div class="col-sm-4" *ngFor="let currentMedia of mediaList">
                 <app-media [mediaItem]="currentMedia"></app-media>
             </div>
-        </div>
-    </tbody>
-</table>
+        </div> -->
+
+<h2>Liste des medias </h2>
+
+        <h3>Cinéma</h3>
+
+            <div class="row">
+                <div class="col-sm-4" *ngFor="let currentMedia of movies">
+                    <app-media [mediaItem]="currentMedia"></app-media>
+                </div>
+            </div>
+
+        <h3>Musique</h3>
+
+            <div class="row">
+                <div class="col-sm-4" *ngFor="let currentMedia of musics">
+                    <app-media [mediaItem]="currentMedia"></app-media>
+                </div>
+            </div>
+
+        <h3>Jeux</h3>
+
+            <div class="row">
+                <div class="col-sm-4" *ngFor="let currentMedia of games">
+                    <app-media [mediaItem]="currentMedia"></app-media>
+                </div>
+            </div>
+
+        <h3>Livres</h3>
+
+            <div class="row">
+                <div class="col-sm-4" *ngFor="let currentMedia of books">
+                    <app-media [mediaItem]="currentMedia"></app-media>
+                </div>
+            </div>

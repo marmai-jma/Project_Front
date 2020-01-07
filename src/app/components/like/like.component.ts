@@ -5,8 +5,7 @@ import { MediaNotationLightDto } from 'src/app/shared-data/media-notation-light-
 
 @Component({
   selector: 'app-like',
-  templateUrl: './like.component.html',
-  styleUrls: ['./like.component.scss']
+  templateUrl: './like.component.html'
 })
 export class LikeComponent implements OnInit {
   globals: Globals;
@@ -40,4 +39,21 @@ export class LikeComponent implements OnInit {
         } );
   }
 
+  likeMedia(){
+    console.log('test');
+    this.liked = true;
+    this.disLiked = false;
+    this.userLogin = this.globals.userLogin;
+    this.mediaDetailService.postNotationBymediaIdUserLogin(this.mediaId, this.userLogin, this.liked)
+    .subscribe(() => console.log('liked'));
+  }
+
+  dislikeMedia(){
+    console.log('false');
+    this.userLogin = this.globals.userLogin;
+    this.liked = false;
+    this.disLiked = true;
+    this.mediaDetailService.postNotationBymediaIdUserLogin(this.mediaId, this.userLogin, this.liked)
+    .subscribe(() => console.log('disliked'));
+  }
 }
