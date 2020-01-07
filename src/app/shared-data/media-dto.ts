@@ -54,8 +54,8 @@ export class MediaDto {
         this.description = options.description || '';
         this.mediaImageURL = options.mediaImageURL || '';
         this.publicationDate = options.publicationDate || '';
-        this.likesTotalNumber = options.likesTotalNumber || 0;
-        this.dislikesTotalNumber = options.dislikesTotalNumber || 0;
+        this.likesTotalNumber = options.likesNumber || 0;
+        this.dislikesTotalNumber = options.dislikesNumber || 0;
     }
 
     /**

@@ -7,7 +7,9 @@
             <p class="card-text bg-success">{{mediaItem.description.substring(0,50)}}</p>
         </div>
         <div class="card-footer">
-            <small class="text-muted">Number of Likes</small>
+            <small class="text-muted"><i class="fas fa-thumbs-up"></i>{{mediaItem.likesTotalNumber}}</small>
+            <small>       /       </small>
+            <small class="text-muted"><i class="fas fa-thumbs-down" ></i>{{mediaItem.dislikesTotalNumber}}</small>
         </div>
     </div>
 </div>

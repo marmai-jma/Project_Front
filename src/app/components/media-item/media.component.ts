@@ -8,10 +8,15 @@ import { MediaDto } from 'src/app/shared-data/media-dto';
 export class MediaComponent implements OnInit {
 
   @Input() mediaItem: MediaDto;
+  
+
 
   constructor() { }
 
   ngOnInit() {
+
   }
+
+
 
 }
