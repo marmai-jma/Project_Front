@@ -2,7 +2,6 @@ import { Component, OnInit, Input } from '@angular/core';
 import { MediaDetailDto } from 'src/app/shared-data/media-detail-dto';
 import { ActivatedRoute } from '@angular/router';
 import { MediaDetailService } from 'src/app/services/media-detail.service';
-import { ReviewDto } from 'src/app/shared-data/review-dto';
 
 @Component({
   selector: 'app-detail',

@@ -1,6 +1,32 @@
-<p>user-detail works!</p>
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb" style="background-color: #e3f2fd;">
         <li class="breadcrumb-item"><a routerLink="/liste">Retour à Liste des medias</a></li>
     </ol>
+    <p>user-detail works!</p>
 </nav>
+<ng-container *ngIf="userDetail">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">id</th>
+                <th scope="col">login</th>
+                <th scope="col">password</th>
+                <th scope="col">userName</th>
+                <th scope="col">userSurname</th>
+                <!-- <th scope="col">avatarImageURL</th> -->
+                <th scope="col">email</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{userDetail.id}}</td>
+                <td>{{userDetail.login}}</td>
+                <td>{{userDetail.password}}</td>
+                <td>{{userDetail.userName}}</td>
+                <td>{{userDetail.userSurname}}</td>
+                <!-- <td>{{userDetail.avatarImageURL}}</td> -->
+                <td>{{userDetail.email}}</td>
+            </tr>
+        </tbody>
+    </table>
+</ng-container>
