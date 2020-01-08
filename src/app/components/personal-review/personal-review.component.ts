@@ -14,6 +14,7 @@ export class PersonalReviewComponent implements OnInit {
   userLogin: string;
   review: ReviewDto;
   globals: Globals;
+  commentToShow : string;
 
 
   constructor(private fb: FormBuilder,
@@ -29,11 +30,16 @@ export class PersonalReviewComponent implements OnInit {
                     this.mediaDetailService
                       .getReviewBymediaIdUserLogin(this.mediaId, this.userLogin)
                       .subscribe(data2 => {
-                        this.review = data2;
-                        this.personalReviewForm = this.fb.group({ comment: [this.review.comment, [Validators.required, Validators.maxLength(2550)]] });
+                        if (data2 !== null) {
+                          this.review = data2;
+                          this.commentToShow = this.review.comment;
+                         } else {this.commentToShow = ''}
+                         this.personalReviewForm = this.fb.group({ comment: [this.commentToShow, [Validators.required, Validators.maxLength(2550)]] });
+
                         });
-                });
-    }
+                })
+                this.personalReviewForm = this.fb.group({ comment: [this.commentToShow, [Validators.required, Validators.maxLength(2550)]] });
+              ;}
 
   saveReview() {
     // this.userLogin = this.globals.userLogin;
