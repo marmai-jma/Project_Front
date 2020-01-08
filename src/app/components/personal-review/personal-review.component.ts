@@ -22,49 +22,43 @@ export class PersonalReviewComponent implements OnInit {
               globals: Globals) { this.globals = globals; }
 
               ngOnInit() {
-                // this.mediaDetailService.getReviewBymediaIdUserLogin(this.mediaId, this.userLogin).subscribe(data => this.review = data);
-                // this.userLogin = this.globals.userLogin;
+                this.personalReviewForm = new FormGroup({
+                  comment : new FormControl()
+                });
+
+
                 this.globals.getCurrentUser().subscribe(
                   data => {
                     this.userLogin = data;
+                    if (this.userLogin !== null) {
                     this.mediaDetailService
                       .getReviewBymediaIdUserLogin(this.mediaId, this.userLogin)
                       .subscribe(data2 => {
-                        if (data2 !== null) {
+                        if (data2 === null) {this.commentToShow = ''} else{
                           this.review = data2;
                           this.commentToShow = this.review.comment;
-                         } else {this.commentToShow = ''}
-                         this.personalReviewForm = this.fb.group({ comment: [this.commentToShow, [Validators.required, Validators.maxLength(2550)]] });
+                         }
+                        this.personalReviewForm =
+                        this.fb.group({ comment: [this.commentToShow, [Validators.required, Validators.maxLength(2550)]] });
 
                         });
+                      }
                 })
-                this.personalReviewForm = this.fb.group({ comment: [this.commentToShow, [Validators.required, Validators.maxLength(2550)]] });
               ;}
 
   saveReview() {
-    // this.userLogin = this.globals.userLogin;
-    // this.globals.getCurrentUser().subscribe(
-    //   data => {
     console.log(this.userLogin);
-    //
 
     this.mediaDetailService.postReviewBymediaIdUserLogin(
       this.mediaId,
       this.userLogin,
       this.personalReviewForm.get('comment').value).subscribe(data => this.review = data);
-    // });
   }
 
   deleteReview() {
-    // this.userLogin = this.globals.userLogin;
-    // this.globals.getCurrentUser().subscribe(
-    //   data => {
     console.log(this.userLogin);
     console.log(this.review.id);
-    // this.mediaDetailService.deleteReviewById(this.review.id).subscribe(() => this.personalReviewForm.get('comment').reset(''));
     this.mediaDetailService.deleteReviewBymediaIdUserLogin(this.mediaId, this.userLogin)
     .subscribe(() => this.personalReviewForm.get('comment').reset(''));
-  // }
-  //   )
   }
 }

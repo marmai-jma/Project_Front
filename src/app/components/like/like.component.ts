@@ -33,11 +33,13 @@ export class LikeComponent implements OnInit {
       this.liked = false;
       this.disLiked = false;
 
-      // this.userLogin = this.globals.userLogin;
       this.globals.getCurrentUser().subscribe(
         data => {
         console.log(data);
         this.userLogin = data;
+
+        if (this.userLogin !== null){
+
         this.mediaDetailService.getMediaNotationBymediaIdUserLogin(this.mediaId, this.userLogin)
       .subscribe(data => {
         this.mediaNotationLightDto = data;
@@ -46,9 +48,8 @@ export class LikeComponent implements OnInit {
           this.liked = this.mediaNotationLightDto.liked;
           this.disLiked = ! this.liked;
         }
-        // console.log(this.liked);
 
-      } );
+      } );}
 
         this.mediaDetailService.getMediaDetailById(id)
       .subscribe(dat => {
@@ -63,45 +64,40 @@ export class LikeComponent implements OnInit {
 
   likeMedia() {
     console.log('test');
-    // if (this.liked != true) { this.totalLiked = this.mediaDetail.likesNumber + 1;};
-    // if (this.disLiked = true) { this.totalDisLiked = this.mediaDetail.dislikesNumber - 1; };
-    if (this.liked != true) { this.totalLiked = this.totalLiked + 1;
-                              if (this.disLiked = true) {
-        if (this.totalDisLiked >0 ){
-        this.totalDisLiked = this.totalDisLiked - 1; };
+    if (this.liked !== true) {
+      this.totalLiked = this.totalLiked + 1;
+      if (this.disLiked === true) {
+        if (this.totalDisLiked > 0) {
+          this.totalDisLiked = this.totalDisLiked - 1;
+        }
       }
-    };
+    }
 
     this.liked = true;
     this.disLiked = false;
-    // this.userLogin = this.globals.userLogin;
-    // this.globals.getCurrentUser().subscribe(
-    //   data => {
+
     this.mediaDetailService.postNotationBymediaIdUserLogin(this.mediaId, this.userLogin, this.liked)
     .subscribe(() => console.log('liked'));
 
 
-      // });
+
     }
 
 
   dislikeMedia() {
     console.log('false');
-    if (this.disLiked != true) { this.totalDisLiked = this.totalDisLiked + 1;
-                                 if (this.liked = true) {
-        if (this.totalDisLiked >0 ){
-        this.totalLiked = this.totalLiked - 1; };
+    if (this.disLiked !== true) {
+      this.totalDisLiked = this.totalDisLiked + 1;
+      if (this.liked === true) {
+        if (this.totalDisLiked > 0) {
+          this.totalLiked = this.totalLiked - 1;
+        }
       }
     }
 
-    //
-    // this.globals.getCurrentUser().subscribe(
-    //   data => {
     this.liked = false;
     this.disLiked = true;
     this.mediaDetailService.postNotationBymediaIdUserLogin(this.mediaId, this.userLogin, this.liked)
     .subscribe(() => console.log('disliked'));
-
-  // });
 }
 }
