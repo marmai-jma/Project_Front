@@ -11,7 +11,7 @@ export class MediaDetailComponent implements OnInit {
   @Input() mediaDetail: MediaDetailDto;
 
 
-  constructor(private route: ActivatedRoute, private mediaDetailService : MediaDetailService) { }
+  constructor(private route: ActivatedRoute, private mediaDetailService: MediaDetailService) { }
 
   ngOnInit() {
     const id = this.route.snapshot.paramMap.get('mediaId');

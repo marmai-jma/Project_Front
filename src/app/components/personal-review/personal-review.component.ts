@@ -11,7 +11,7 @@ import { Globals } from 'src/app/globals';
 export class PersonalReviewComponent implements OnInit {
   @Input() mediaId: string;
   personalReviewForm: FormGroup;
-  userLogin : string;
+  userLogin: string;
   review: ReviewDto;
   globals: Globals;
 
@@ -20,23 +20,30 @@ export class PersonalReviewComponent implements OnInit {
               private mediaDetailService: MediaDetailService,
               globals: Globals) { this.globals = globals; }
 
-  ngOnInit() {
-    // this.userLogin = this.globals.userLogin;
-    this.globals.getCurrentUser().subscribe(
-      data => {
-        this.userLogin = data;
-    this.personalReviewForm = this.fb.group({
-      comment: ['', [Validators.required, Validators.maxLength(2550)]]
-    });
-    console.log(data);
-  });}
+              ngOnInit() {
+                // this.mediaDetailService.getReviewBymediaIdUserLogin(this.mediaId, this.userLogin).subscribe(data => this.review = data);
+                // this.userLogin = this.globals.userLogin;
+                this.globals.getCurrentUser().subscribe(
+                  data => {
+                    this.userLogin = data;
+                    this.mediaDetailService
+                      .getReviewBymediaIdUserLogin(this.mediaId, this.userLogin)
+                      .subscribe(data2 => {
+                        this.review = data2;
+                        this.personalReviewForm = this.fb.group({ comment: [this.review.comment, [Validators.required, Validators.maxLength(2550)]] });
+                        });
+                })
+              ;}
 
   saveReview() {
     // this.userLogin = this.globals.userLogin;
     // this.globals.getCurrentUser().subscribe(
     //   data => {
     console.log(this.userLogin);
-    this.mediaDetailService.postReviewBymediaIdUserLogin(this.mediaId,
+    //
+
+    this.mediaDetailService.postReviewBymediaIdUserLogin(
+      this.mediaId,
       this.userLogin,
       this.personalReviewForm.get('comment').value).subscribe(data => this.review = data);
     // });
@@ -49,7 +56,7 @@ export class PersonalReviewComponent implements OnInit {
     console.log(this.userLogin);
     console.log(this.review.id);
     // this.mediaDetailService.deleteReviewById(this.review.id).subscribe(() => this.personalReviewForm.get('comment').reset(''));
-    this.mediaDetailService.deleteReviewBymediaIdUserLogin(this.mediaId,this.userLogin)
+    this.mediaDetailService.deleteReviewBymediaIdUserLogin(this.mediaId, this.userLogin)
     .subscribe(() => this.personalReviewForm.get('comment').reset(''));
   // }
   //   )

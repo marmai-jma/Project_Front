@@ -46,7 +46,7 @@ export class UserComponent implements OnInit {
   logUser() {
     this.globals.setCurrentUser(this.userForm.get('login').value);
     // this.globals.userLogin = this.userForm.get('login').value;
-    this.router.navigate(["/"]);
+    this.router.navigate(['/']);
     // console.log('logUser : ' + this.globals.userLogin);
     console.log(this.userForm.value)
   }

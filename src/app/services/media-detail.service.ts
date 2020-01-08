@@ -11,20 +11,15 @@ import { MediaNotationLightDto } from '../shared-data/media-notation-light-dto';
 })
 export class MediaDetailService {
 
-
-
   constructor(private http: HttpClient,
               @Inject('BACKEND_URL') private url: string) {}
 
-
-
-
   getMediaDetailById(mediaId: string): Observable<MediaDetailDto> {
-                return this.http.get(`${this.url}/medias/${mediaId}`)
-                .pipe(
-                  map((result: any) => new MediaDetailDto(result)),
-                );
-              }
+    return this.http.get(`${this.url}/medias/${mediaId}`)
+      .pipe(
+        map((result: any) => new MediaDetailDto(result)),
+      );
+    }
 
   postReviewBymediaIdUserLogin(mediaId: string, userLogin: string, comment: string ): Observable<any> {
     return this.http.post(`${this.url}/medias/${mediaId}/review/${userLogin}`, {'comment': comment} )
@@ -48,6 +43,13 @@ export class MediaDetailService {
       );
   }
 
+  getReviewBymediaIdUserLogin(mediaId: string, userLogin: string): Observable<ReviewDto> {
+    return this.http.get(`${this.url}/medias/${mediaId}/review/${userLogin}`)
+      .pipe(
+        map((result: any) => new ReviewDto(result)),
+      );
+    }
+
   getMediaNotationBymediaIdUserLogin(mediaId: string, userLogin: string ): Observable<MediaNotationLightDto> {
     return this.http.get(`${this.url}/medias/${mediaId}/notation/${userLogin}`)
     .pipe(
@@ -59,8 +61,5 @@ export class MediaDetailService {
     console.log("url : " + this.url + ", media id :" + mediaId + ", userLogin: " + userLogin + ", like : " + like)
     return this.http.post<any>(`${this.url}/medias/${mediaId}/notation/${userLogin}`, {'liked': like});
   }
-
-  
-
 
 }

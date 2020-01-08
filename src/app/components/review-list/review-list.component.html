@@ -5,9 +5,9 @@
         <div class="row" *ngIf="reviewListe.length > 0">
             <div class="col-sm-4" *ngFor="let currentReview of reviewListe">
                 <app-review [reviewItem]="currentReview"></app-review>
+
             </div>
         </div>
-
     </tbody>
 </table>
 <div class="alert alert-info" *ngIf="reviewListe.length === 0">

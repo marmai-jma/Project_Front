@@ -17,7 +17,7 @@
       <p>Auteur: {{ mediaDetail.authorSurname }} {{ mediaDetail.authorName }}</p>
       <p>Date de sortie: {{ mediaDetail.publicationDate }}</p>
 
-      <!-- <p 
+      <!-- <p
         <i class="fas fa-thumbs-up"></i>  {{ mediaDetail.likesNumber }}
         <i class="fas fa-thumbs-down"></i> {{ mediaDetail.dislikesNumber }}
       </p> -->
@@ -25,6 +25,9 @@
       <app-like [mediaId]="mediaDetail.id"></app-like>
     </div>
   </div>
-  <app-personal-review [mediaId]="mediaDetail.id"></app-personal-review>
-  <app-review-list [mediaId]="mediaDetail.id"></app-review-list>
+
+
+  <app-personal-review  [mediaId]="mediaDetail.id"></app-personal-review>
+  <app-review-list      [mediaId]="mediaDetail.id"></app-review-list>
+
 </ng-container>
