@@ -14,7 +14,7 @@
                 && personalReviewForm.get('comment').invalid"
             class="alert">
         <div *ngIf ="personalReviewForm.get('comment').hasError('required')">
-            Le commentaire est obligatoire.
+            Faites jouer votre esprit critique et laissez votre avis !
         </div>
         <div *ngIf ="personalReviewForm.get('comment').hasError('maxlength')">
             Le commentaire doit au maximum faire 2550 caractères.

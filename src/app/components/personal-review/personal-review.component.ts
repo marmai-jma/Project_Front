@@ -32,8 +32,8 @@ export class PersonalReviewComponent implements OnInit {
                         this.review = data2;
                         this.personalReviewForm = this.fb.group({ comment: [this.review.comment, [Validators.required, Validators.maxLength(2550)]] });
                         });
-                })
-              ;}
+                });
+    }
 
   saveReview() {
     // this.userLogin = this.globals.userLogin;
