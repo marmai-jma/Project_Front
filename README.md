@@ -1,8 +1,5 @@
-# Projet Fil Rouge - BNP Paribas Epita
-
-FRONT
+# Projet Fil Rouge - FRONT - BNP Paribas - Epita 
 ​
-
 ## Projet
 Le projet fil rouge consiste à créer un site permettant aux utilisateurs de donner leur avis (like / dislike) et de mettre des commentaires sur des médias (livre. film, musique
 jeux de rôles). 
