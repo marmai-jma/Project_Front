@@ -49,13 +49,15 @@ export class LikeComponent implements OnInit {
           this.disLiked = ! this.liked;
         }
 
-      } );}
+      } ,
+      error => console.log('MediaNotation inaccessible')); }
 
         this.mediaDetailService.getMediaDetailById(id)
       .subscribe(dat => {
         this.mediaDetail = dat;
         this.totalLiked = this.mediaDetail.likesNumber;
-        this.totalDisLiked = this.mediaDetail.dislikesNumber; });
+        this.totalDisLiked = this.mediaDetail.dislikesNumber; },
+        error => console.log('Media Detail inaccessible'));
 
 
       });

@@ -41,7 +41,8 @@ export class PersonalReviewComponent implements OnInit {
                         this.personalReviewForm =
                         this.fb.group({ comment: [this.commentToShow, [Validators.required, Validators.maxLength(2550)]] });
 
-                        });
+                        },
+                        error => console.log('Review inaccessible'));
                       }
                 })
               ;}
