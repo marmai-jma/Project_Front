@@ -14,7 +14,8 @@ export class PersonalReviewComponent implements OnInit {
   userLogin: string;
   review: ReviewDto;
   globals: Globals;
-  commentToShow : string;
+  commentToShow: string;
+  showDelete: boolean;
 
 
   constructor(private fb: FormBuilder,
@@ -23,8 +24,10 @@ export class PersonalReviewComponent implements OnInit {
 
               ngOnInit() {
                 this.personalReviewForm = new FormGroup({
-                  comment : new FormControl()
+                  comment : new FormControl('', [Validators.required, Validators.maxLength(2550)])
                 });
+                this.commentToShow = '';
+                this.showDelete = false;
 
 
                 this.globals.getCurrentUser().subscribe(
@@ -34,9 +37,13 @@ export class PersonalReviewComponent implements OnInit {
                     this.mediaDetailService
                       .getReviewBymediaIdUserLogin(this.mediaId, this.userLogin)
                       .subscribe(data2 => {
-                        if (data2 === null) {this.commentToShow = ''} else{
+                        if (data2 === null) {
+                          this.commentToShow = ''
+                          this.showDelete = false;
+                        } else {
                           this.review = data2;
                           this.commentToShow = this.review.comment;
+                          this.showDelete = true;
                          }
                         this.personalReviewForm =
                         this.fb.group({ comment: [this.commentToShow, [Validators.required, Validators.maxLength(2550)]] });
@@ -45,21 +52,29 @@ export class PersonalReviewComponent implements OnInit {
                         error => console.log('Review inaccessible'));
                       }
                 })
-              ;}
+              ; }
 
   saveReview() {
     console.log(this.userLogin);
+    console.log(this.personalReviewForm.get('comment').value);
 
     this.mediaDetailService.postReviewBymediaIdUserLogin(
       this.mediaId,
       this.userLogin,
       this.personalReviewForm.get('comment').value).subscribe(data => this.review = data);
+    this.showDelete = true;
   }
 
   deleteReview() {
     console.log(this.userLogin);
     console.log(this.review.id);
+    console.log('commentToShow');
+    console.log(this.commentToShow);
+
     this.mediaDetailService.deleteReviewBymediaIdUserLogin(this.mediaId, this.userLogin)
-    .subscribe(() => this.personalReviewForm.get('comment').reset(''));
+    .subscribe(() => this.personalReviewForm.get('comment').reset(''),
+    error => console.log('Pas de suppression de review'));
+    this.showDelete = false;
+    this.commentToShow = '';
   }
 }
