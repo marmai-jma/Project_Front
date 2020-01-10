@@ -16,15 +16,16 @@
 
       <!-- Choix du type d'auteur en fonction des catégories d'oeuvres -->
 
-      <div [ngSwitch]="mediaDetail.category">
+      <!-- <div [ngSwitch]="mediaDetail.category">
         <div *ngSwitchCase="FILM">Réalisateur: {{ mediaDetail.authorSurname }} {{ mediaDetail.authorName }}</div>
         <div *ngSwitchCase="MUSIQUE">Artiste: {{ mediaDetail.authorSurname }} {{ mediaDetail.authorName }}</div>
         <div *ngSwitchDefault>Auteur: {{ mediaDetail.authorSurname }} {{ mediaDetail.authorName }}</div>
-      </div>
+      </div> -->
 
-      <!-- <div *ngIf="mediaDetail.category === 'FILM'">Réalisateur: {{ mediaDetail.authorSurname }} {{ mediaDetail.authorName }}</div>
+      <div *ngIf="mediaDetail.category === 'FILM'">Réalisateur: {{ mediaDetail.authorSurname }} {{ mediaDetail.authorName }}</div>
       <div *ngIf="mediaDetail.category === 'MUSIQUE'">Artiste: {{ mediaDetail.authorSurname }} {{ mediaDetail.authorName }}</div>
-      <div *ngIf="mediaDetail.category === 'JEU' || 'LIVRE'">Auteur: {{ mediaDetail.authorSurname }} {{ mediaDetail.authorName }}</div> -->
+      <div *ngIf="mediaDetail.category === 'JEU'">Auteur: {{ mediaDetail.authorSurname }} {{ mediaDetail.authorName }}</div>
+      <div *ngIf="mediaDetail.category === 'LIVRE'">Auteur: {{ mediaDetail.authorSurname }} {{ mediaDetail.authorName }}</div>
 
       <p>Date de sortie: {{ mediaDetail.publicationDate }}</p>
       <p>{{ mediaDetail.description }}</p>
