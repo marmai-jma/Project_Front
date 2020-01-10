@@ -4,7 +4,8 @@ import { MediasService } from 'src/app/services/medias.service';
 
 @Component({
   selector: 'app-list-medias',
-  templateUrl: './list-medias.component.html'
+  templateUrl: './list-medias.component.html',
+  styleUrls: ['./list-medias.component.scss']
 })
 export class ListMediasComponent implements OnInit {
   mediaList: MediaDto[];
@@ -15,7 +16,10 @@ export class ListMediasComponent implements OnInit {
   games: MediaDto[];
   books: MediaDto[];
 
-  constructor(private mediaService: MediasService) { }
+  responsiveOptions;
+
+  constructor(private mediaService: MediasService,
+                      ) { }
 
   ngOnInit() {
     // this.mediaService.getMedias().subscribe(data => { this.mediaList = data; });

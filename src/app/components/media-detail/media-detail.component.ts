@@ -20,8 +20,5 @@ export class MediaDetailComponent implements OnInit {
 
   }
 
-
-
-
 }
 

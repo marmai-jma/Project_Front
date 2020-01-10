@@ -7,16 +7,27 @@
 <ng-container *ngIf="mediaDetail">
 
   <div class="row">
-    <div class="col-md-6 bg-light">
+    <div class="col-md-4 bg-light">
       <img [src]="mediaDetail.mediaImageURL" class="rounded img-fluid">
     </div>
-    <div class="col-md-6 bg-success" >
-      <h1>{{ mediaDetail.label }}</h1>
-      <p>{{ mediaDetail.description }}</p>
+    <div class="col-md-8 bg-success" >
+      <h2>{{ mediaDetail.label }}</h2>
       <p>{{ mediaDetail.category }} {{ mediaDetail.type }}</p>
-      <p>Auteur: {{ mediaDetail.authorSurname }} {{ mediaDetail.authorName }}</p>
-      <p>Date de sortie: {{ mediaDetail.publicationDate }}</p>
 
+      <!-- Choix du type d'auteur en fonction des catégories d'oeuvres -->
+
+      <div [ngSwitch]="mediaDetail.category">
+        <div *ngSwitchCase="FILM">Réalisateur: {{ mediaDetail.authorSurname }} {{ mediaDetail.authorName }}</div>
+        <div *ngSwitchCase="MUSIQUE">Artiste: {{ mediaDetail.authorSurname }} {{ mediaDetail.authorName }}</div>
+        <div *ngSwitchDefault>Auteur: {{ mediaDetail.authorSurname }} {{ mediaDetail.authorName }}</div>
+      </div>
+
+      <!-- <div *ngIf="mediaDetail.category === 'FILM'">Réalisateur: {{ mediaDetail.authorSurname }} {{ mediaDetail.authorName }}</div>
+      <div *ngIf="mediaDetail.category === 'MUSIQUE'">Artiste: {{ mediaDetail.authorSurname }} {{ mediaDetail.authorName }}</div>
+      <div *ngIf="mediaDetail.category === 'JEU' || 'LIVRE'">Auteur: {{ mediaDetail.authorSurname }} {{ mediaDetail.authorName }}</div> -->
+
+      <p>Date de sortie: {{ mediaDetail.publicationDate }}</p>
+      <p>{{ mediaDetail.description }}</p>
       <!-- <p
         <i class="fas fa-thumbs-up"></i>  {{ mediaDetail.likesNumber }}
         <i class="fas fa-thumbs-down"></i> {{ mediaDetail.dislikesNumber }}

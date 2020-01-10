@@ -22,6 +22,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { Globals } from './globals';
 import { RecoItemComponent } from './components/reco-item/reco-item.component';
 import { ListRecosComponent } from './components/list-recos/list-recos.component';
+import {CarouselModule} from 'primeng/carousel';
 
 @NgModule({
   declarations: [
@@ -40,17 +41,18 @@ import { ListRecosComponent } from './components/list-recos/list-recos.component
     ReviewComponent,
     UsefulComponent,
     RecoItemComponent,
-    ListRecosComponent,
+    ListRecosComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    CarouselModule
   ],
   providers: [
     { provide: 'BACKEND_URL', useValue: 'http://localhost:8080' },
-    Globals
+    Globals,
   ],
   bootstrap: [AppComponent]
 })
