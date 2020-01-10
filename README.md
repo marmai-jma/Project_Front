@@ -1,5 +1,6 @@
 # Projet Fil Rouge - FRONT - BNP Paribas Epita 
 ​
+
 ## Projet
 Le projet fil rouge consiste à créer un site permettant aux utilisateurs de donner leur avis (like / dislike) et de mettre des commentaires sur des médias (livre, film, musique
 jeux de rôles). 
@@ -12,8 +13,8 @@ Ce projet a été généré avec [Angular CLI](https://github.com/angular/angula
 ## Mode opératoire
 Sur un serveur de développement, après installation des parties FRONT et BACK stockées sur git.
 
-* Lancer le projet BACK (via `run` sur ProjectApplication dans l'IDE Intellij) Par défaut, le projet BACK tourne sur `http://localhost:8080/` 
-* Lancer le projet FRONT (avec la commande `ng serve` dans Visual Studio).
+* Lancer le projet BACK (via `run` sur ProjectApplication.java dans l'IDE Intellij) Par défaut, le projet BACK tourne sur `http://localhost:8080/` 
+* Lancer le projet FRONT (avec la commande `ng serve` dans Visual Studio. La première fois, exécuter la commande `npm install` avant `ng serve` ).
 * Aller sur [`http://localhost:4200/`](http://localhost:4200/).
 * Une liste de médias s'affiche. 
 
@@ -29,7 +30,7 @@ Plusieurs logins de test sont mis à disposition au chargement de la base h2.
 
 ## Éléments de conception
 
-Modèle de données: 
+Diagramme de classes: 
 ![image info](./UML_diagram.png)
 
 - la partie jaune correspond au MVP (Minimal Viable Product).
