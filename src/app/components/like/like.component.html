@@ -1,11 +1,11 @@
-<p>like works!</p>
+<!-- <p>like works!</p> -->
 <div class="likeComponent bg-primary" >
     <i class="fas fa-thumbs-up"></i> {{ totalLiked }}
     <i class="fas fa-thumbs-down"></i> {{totalDisLiked }}
 
     <p *ngIf = "liked">Liked by user</p>
     <p *ngIf = "disLiked">DisLiked by user</p>
-    
+
     <div *ngIf="userLogin">
         <button><i class="fas fa-thumbs-up" (click)="likeMedia()"></i></button>
         <button><i class="fas fa-thumbs-down" (click)="dislikeMedia()"></i></button>
