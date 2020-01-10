@@ -17,7 +17,8 @@ export class UserDetailComponent implements OnInit {
     const userLogin = this.route.snapshot.paramMap.get('userLogin');
     console.log(this.route.snapshot.paramMap);
     this.userDetailService.getOneUser(userLogin)
-      .subscribe(data => this.userDetail = data);
+      .subscribe(data => this.userDetail = data,
+      error => console.log('User inaccessible'));
   }
 
 }

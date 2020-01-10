@@ -25,10 +25,10 @@
         <textarea formControlName="comment" cols='80%' rows='4' placeholder='Saisir un commentaire'></textarea>
         <br/>
         <!-- <textarea formControlName="comment"></textarea> -->
-        <button type="submit" class="btn btn-primary mb-2">Enregistrer</button>
+        <button [disabled]="!personalReviewForm.valid" type="submit" class="btn btn-primary mb-2">Enregistrer</button>
     </div>
 </form>
 
-<button (click)="deleteReview()" class="btn btn-primary mb-2">Supprimer</button>
+<button *ngIf="showDelete" (click)="deleteReview()" class="btn btn-primary mb-2">Supprimer</button>
 
 </div>
