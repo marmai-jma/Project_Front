@@ -6,10 +6,10 @@
             </div>
         </div> -->
 
-<h2>Liste des medias </h2>
+<h2 style="text-align: center;">Liste des medias </h2>
 
 <br />
-        <h3>Cinéma</h3>
+        <h3 style="text-align: center;">Cinéma</h3>
 
         <p-carousel [value]="movies" [numVisible]="4" [numScroll]="3" [circular]="false" [responsiveOptions]="responsiveOptions">
             <ng-template let-movie pTemplate="item">
@@ -24,7 +24,7 @@
                 </div>
             </div> -->
 
-        <h3>Musique</h3>
+        <h3 style="text-align: center;">Musique</h3>
         <p-carousel [value]="musics" [numVisible]="4" [numScroll]="3" [circular]="false" [responsiveOptions]="responsiveOptions">
             <ng-template let-music pTemplate="item">
                 <app-media [mediaItem]="music"></app-media>
@@ -37,7 +37,7 @@
                 </div>
             </div> -->
 
-        <h3>Jeux</h3>
+        <h3 style="text-align: center;">Jeux</h3>
 
         <p-carousel [value]="games" [numVisible]="4" [numScroll]="3" [circular]="false" [responsiveOptions]="responsiveOptions">
             <ng-template let-game pTemplate="item">
@@ -51,7 +51,7 @@
                 </div>
             </div> -->
 
-        <h3>Livres</h3>
+        <h3 style="text-align: center;">Livres</h3>
 
         <p-carousel [value]="books" [numVisible]="4" [numScroll]="3" [circular]="false" [responsiveOptions]="responsiveOptions">
             <ng-template let-book pTemplate="item">
